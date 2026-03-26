@@ -4,6 +4,8 @@ import { AuthProvider } from './hooks/useAuth';
 import { CartProvider } from './hooks/useCart';
 import Navbar from './components/common/Navbar';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import AssistantWidget from './components/assistant/AssistantWidget';
+import AgentDashboard from './pages/AgentDashboard';
 
 // Pages
 import LandingPage from './pages/LandingPage';
@@ -32,49 +34,54 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <CartProvider>
-        <div style={{ minHeight: '100vh', background: 'var(--color-bg)' }}>
-          <Navbar />
-          <Routes>
-            {/* Public */}
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/products/:id" element={<ProductDetailPage />} />
-            <Route path="/streams" element={<StreamsPage />} />
+          <div style={{ minHeight: '100vh', background: 'var(--color-bg)' }}>
+            <Navbar />
+            <Routes>
+              {/* Public */}
+              <Route path="/agent/dashboard" element={<AgentDashboard />} />
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/products/:id" element={<ProductDetailPage />} />
+              <Route path="/streams" element={<StreamsPage />} />
 
-            {/* Buyer Protected */}
-            <Route path="/buyer/dashboard" element={
-              <ProtectedRoute allowedRole="buyer"><BuyerDashboard /></ProtectedRoute>
-            } />
-            <Route path="/buyer/orders" element={
-              <ProtectedRoute allowedRole="buyer"><BuyerOrdersPage /></ProtectedRoute>
-            } />
-            <Route path="/cart" element={
-              <ProtectedRoute allowedRole="buyer"><CartPage /></ProtectedRoute>
-            } />
+              {/* Buyer Protected */}
+              <Route path="/buyer/dashboard" element={
+                <ProtectedRoute allowedRole="buyer"><BuyerDashboard /></ProtectedRoute>
+              } />
+              <Route path="/buyer/orders" element={
+                <ProtectedRoute allowedRole="buyer"><BuyerOrdersPage /></ProtectedRoute>
+              } />
+              <Route path="/cart" element={
+                <ProtectedRoute allowedRole="buyer"><CartPage /></ProtectedRoute>
+              } />
 
-            {/* Seller Protected */}
-            <Route path="/seller/dashboard" element={
-              <ProtectedRoute allowedRole="seller"><SellerDashboard /></ProtectedRoute>
-            } />
-            <Route path="/seller/products" element={
-              <ProtectedRoute allowedRole="seller"><SellerProductsPage /></ProtectedRoute>
-            } />
-            <Route path="/seller/orders" element={
-              <ProtectedRoute allowedRole="seller"><SellerOrdersPage /></ProtectedRoute>
-            } />
-            <Route path="/seller/profile" element={
-              <ProtectedRoute allowedRole="seller"><SellerProfilePage /></ProtectedRoute>
-            } />
-            <Route path="/seller/streams" element={
-              <ProtectedRoute allowedRole="seller"><SellerStreamsPage /></ProtectedRoute>
-            } />
+              {/* Seller Protected */}
+              <Route path="/seller/dashboard" element={
+                <ProtectedRoute allowedRole="seller"><SellerDashboard /></ProtectedRoute>
+              } />
+              <Route path="/seller/products" element={
+                <ProtectedRoute allowedRole="seller"><SellerProductsPage /></ProtectedRoute>
+              } />
+              <Route path="/seller/orders" element={
+                <ProtectedRoute allowedRole="seller"><SellerOrdersPage /></ProtectedRoute>
+              } />
+              <Route path="/seller/profile" element={
+                <ProtectedRoute allowedRole="seller"><SellerProfilePage /></ProtectedRoute>
+              } />
+              <Route path="/seller/streams" element={
+                <ProtectedRoute allowedRole="seller"><SellerStreamsPage /></ProtectedRoute>
+              } />
 
-            {/* Fallback */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </div>
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+
+            {/* ✅ AssistantWidget is OUTSIDE <Routes> but INSIDE <div> */}
+            <AssistantWidget />
+
+          </div>
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>

@@ -1,0 +1,255 @@
+text,intent,category
+hi,greeting,none
+hello,greeting,none
+hey,greeting,none
+hii,greeting,none
+helo,greeting,none
+hi there,greeting,none
+hello there,greeting,none
+good morning,greeting,none
+good evening,greeting,none
+good afternoon,greeting,none
+good night,greeting,none
+good day,greeting,none
+howdy,greeting,none
+hi i am mahesh,greeting,none
+hello i am raj,greeting,none
+hey i am priya,greeting,none
+hi my name is kumar,greeting,none
+hello i am new here,greeting,none
+hi just registered,greeting,none
+hey how are you,greeting,none
+hello how does this work,greeting,none
+hi i am a buyer,greeting,none
+hi i am a seller,greeting,none
+what is up,greeting,none
+greetings,greeting,none
+hi streamsales,greeting,none
+hello support,greeting,none
+hi can you help,greeting,none
+hey there,greeting,none
+hello assistant,greeting,none
+bye,goodbye,none
+goodbye,goodbye,none
+see you later,goodbye,none
+thanks bye,goodbye,none
+ok thanks,goodbye,none
+thank you goodbye,goodbye,none
+that helped thanks,goodbye,none
+all good now thanks,goodbye,none
+problem solved thank you,goodbye,none
+ok i am done,goodbye,none
+great thanks,goodbye,none
+thank you so much,goodbye,none
+how to buy a product,flow_request,how_to_buy
+how to order something,flow_request,how_to_buy
+how do i purchase,flow_request,how_to_buy
+steps to buy,flow_request,how_to_buy
+how to place an order,flow_request,how_to_buy
+i want to buy a product,flow_request,how_to_buy
+how do i order an item,flow_request,how_to_buy
+purchase steps,flow_request,how_to_buy
+buying process,flow_request,how_to_buy
+how to add to cart,flow_request,how_to_buy
+how to checkout,flow_request,how_to_buy
+how to complete purchase,flow_request,how_to_buy
+ordering guide,flow_request,how_to_buy
+buy product steps,flow_request,how_to_buy
+i want to order something,flow_request,how_to_buy
+how to become a seller,flow_request,how_to_sell
+steps to start selling,flow_request,how_to_sell
+how do i sell products,flow_request,how_to_sell
+how to list a product,flow_request,how_to_sell
+selling guide,flow_request,how_to_sell
+how to register as seller,flow_request,how_to_sell
+how to go live as seller,flow_request,how_to_sell
+how to start live stream,flow_request,how_to_sell
+how to create product listing,flow_request,how_to_sell
+seller registration steps,flow_request,how_to_sell
+how do i start streaming,flow_request,how_to_sell
+how to set up my store,flow_request,how_to_sell
+how to track my order,flow_request,how_to_track
+order tracking steps,flow_request,how_to_track
+how do i check order status,flow_request,how_to_track
+where to find my order,flow_request,how_to_track
+how to find delivery status,flow_request,how_to_track
+track shipment steps,flow_request,how_to_track
+how to see my orders,flow_request,how_to_track
+where is my order history,flow_request,how_to_track
+i cannot login to my account,support_request,login_issue
+my password is not working,support_request,login_issue
+login page shows error,support_request,login_issue
+forgot my password need to reset,support_request,login_issue
+account login failed invalid credentials,support_request,login_issue
+i am unable to sign in,support_request,login_issue
+login button not working,support_request,login_issue
+keep getting invalid password error,support_request,login_issue
+password reset email not received,support_request,login_issue
+cannot access my account after reset,support_request,login_issue
+two factor authentication not working,support_request,login_issue
+session keeps expiring automatically,support_request,login_issue
+cannot log in from mobile device,support_request,login_issue
+account locked after wrong password,support_request,login_issue
+forgot password link not working,support_request,login_issue
+sign in page not loading,support_request,login_issue
+login gives 403 error,support_request,login_issue
+cannot remember my login email,support_request,login_issue
+my account password changed itself,support_request,login_issue
+verification code not arriving,support_request,login_issue
+login keeps failing,support_request,login_issue
+cannot sign in on any device,support_request,login_issue
+my order has not been delivered,support_request,order_issue
+where is my order,support_request,order_issue
+order is stuck in processing,support_request,order_issue
+i want to cancel my order,support_request,order_issue
+order shows delivered but not received,support_request,order_issue
+order placed but no confirmation received,support_request,order_issue
+order quantity was wrong,support_request,order_issue
+delivery address was incorrect on order,support_request,order_issue
+shipment tracking not updating,support_request,order_issue
+order cancelled without my request,support_request,order_issue
+order taking too long to ship,support_request,order_issue
+duplicate order was placed accidentally,support_request,order_issue
+never received my package,support_request,order_issue
+order status stuck on placed,support_request,order_issue
+i want to return my order,support_request,order_issue
+my order arrived very late,support_request,order_issue
+order shows shipped but no update,support_request,order_issue
+wrong price was charged on order,support_request,order_issue
+order got lost in transit,support_request,order_issue
+cannot cancel my order now,support_request,order_issue
+order is taking weeks,support_request,order_issue
+i cannot create a product listing,support_request,seller_issue
+my seller dashboard is not loading,support_request,seller_issue
+product images not uploading in store,support_request,seller_issue
+seller profile update not saving,support_request,seller_issue
+i cannot edit my product price,support_request,seller_issue
+orders not showing in seller dashboard,support_request,seller_issue
+my store page is not visible to buyers,support_request,seller_issue
+product category not available in listing,support_request,seller_issue
+seller account suspended unexpectedly,support_request,seller_issue
+cannot start live stream session,support_request,seller_issue
+stream keeps disconnecting repeatedly,support_request,seller_issue
+products not appearing in marketplace,support_request,seller_issue
+cannot delete my product listing,support_request,seller_issue
+seller payout not received yet,support_request,seller_issue
+my seller profile picture not uploading,support_request,seller_issue
+stream audio not working properly,support_request,seller_issue
+cannot add new products to store,support_request,seller_issue
+seller verification not completed,support_request,seller_issue
+my sales data is not showing,support_request,seller_issue
+product description not saving properly,support_request,seller_issue
+stream viewer count not updating,support_request,seller_issue
+cannot manage orders from dashboard,support_request,seller_issue
+my account details are incorrect,support_request,account_issue
+i want to delete my account,support_request,account_issue
+email address change not working,support_request,account_issue
+profile picture not updating at all,support_request,account_issue
+i need to change my phone number,support_request,account_issue
+account verification email not received,support_request,account_issue
+my name is showing incorrectly everywhere,support_request,account_issue
+cannot update billing information,support_request,account_issue
+i think my account was hacked,support_request,account_issue
+privacy settings are not saving,support_request,account_issue
+notification preferences not working,support_request,account_issue
+account email is wrong need to fix,support_request,account_issue
+cannot change my username at all,support_request,account_issue
+my profile data has disappeared,support_request,account_issue
+address in profile is very outdated,support_request,account_issue
+cannot update my password from settings,support_request,account_issue
+account shows wrong role assigned,support_request,account_issue
+my saved addresses are all gone,support_request,account_issue
+profile shows old information,support_request,account_issue
+account security settings not working,support_request,account_issue
+the website is not loading at all,bug_report,technical_bug
+page shows blank white screen,bug_report,technical_bug
+app is very slow and laggy,bug_report,technical_bug
+getting 500 internal server error,bug_report,technical_bug
+buttons are not clicking at all,bug_report,technical_bug
+images not loading on any page,bug_report,technical_bug
+website crashes on mobile browser,bug_report,technical_bug
+error message appears randomly,bug_report,technical_bug
+search function not working at all,bug_report,technical_bug
+filter is not responding,bug_report,technical_bug
+payment page keeps freezing,bug_report,technical_bug
+cannot scroll on any page,bug_report,technical_bug
+browser console shows many errors,bug_report,technical_bug
+api call is failing with errors,bug_report,technical_bug
+404 error on product page,bug_report,technical_bug
+checkout button not responding,bug_report,technical_bug
+cart is not updating properly,bug_report,technical_bug
+page keeps refreshing by itself,bug_report,technical_bug
+navbar is broken on mobile view,bug_report,technical_bug
+dropdown menu not opening at all,bug_report,technical_bug
+website not opening in browser,bug_report,technical_bug
+page loads but shows nothing,bug_report,technical_bug
+login page is showing errors,bug_report,technical_bug
+wrong item was delivered to me,complaint,product_issue
+product is completely damaged,complaint,product_issue
+product does not match the description,complaint,product_issue
+received a fake product,complaint,product_issue
+product quality is very poor,complaint,product_issue
+item is broken on arrival,complaint,product_issue
+seller sent me wrong item,complaint,product_issue
+product not as shown in pictures,complaint,product_issue
+defective product was delivered,complaint,product_issue
+product size is wrong altogether,complaint,product_issue
+color of product is different,complaint,product_issue
+missing accessories in package,complaint,product_issue
+counterfeit product was received,complaint,product_issue
+product stopped working next day,complaint,product_issue
+packaging was very damaged,complaint,product_issue
+i want to report a fraud,complaint,product_issue
+seller cheated me badly,complaint,product_issue
+product was advertised incorrectly,complaint,product_issue
+item looks used not brand new,complaint,product_issue
+product has manufacturing defect,complaint,product_issue
+i received empty box,complaint,product_issue
+item was missing from package,complaint,product_issue
+i have a general question,general_question,general_query
+what are the fees for selling here,general_question,general_query
+how to contact customer support,general_question,general_query
+what is the return policy,general_question,general_query
+how long does delivery take,general_question,general_query
+is there a mobile app available,general_question,general_query
+how do i earn more as a seller,general_question,general_query
+what payment methods are accepted,general_question,general_query
+how does this platform make money,general_question,general_query
+is this platform safe to use,general_question,general_query
+how do i contact the seller,general_question,general_query
+can i have multiple accounts,general_question,general_query
+what is the commission percentage,general_question,general_query
+how do i get verified as seller,general_question,general_query
+what is streamsales platform,general_question,general_query
+is streamsales free to use,general_question,general_query
+how to use streamsales,general_question,general_query
+what can i do on streamsales,general_question,general_query
+my login is broken cant get in,support_request,login_issue
+order still not here after weeks,support_request,order_issue
+seller dashboard keeps crashing,support_request,seller_issue
+need to update account email urgently,support_request,account_issue
+site completely broken on iphone,bug_report,technical_bug
+password wont reset at all,support_request,login_issue
+package delivered to wrong address,support_request,order_issue
+cant upload product photos at all,support_request,seller_issue
+profile wont save any changes,support_request,account_issue
+checkout page wont load properly,bug_report,technical_bug
+forgot password link has expired,support_request,login_issue
+live stream quality very poor always,support_request,seller_issue
+account got disabled suddenly,support_request,account_issue
+error 404 on every product page,bug_report,technical_bug
+payment failed but money got deducted,complaint,product_issue
+product arrived completely broken,complaint,product_issue
+seller not responding to messages,complaint,product_issue
+wrong color product was sent,complaint,product_issue
+ordered large size got small,complaint,product_issue
+app freezes when adding to cart,bug_report,technical_bug
+screen goes black during live stream,bug_report,technical_bug
+chat feature not loading in stream,bug_report,technical_bug
+order history page not loading,bug_report,technical_bug
+my profile page returns 500 error,bug_report,technical_bug
+how to use the platform,general_question,general_query
+explain how ordering works,general_question,general_query
+what happens after i place an order,general_question,general_query
+how to get a refund,general_question,general_query
+how to return a product,general_question,general_query
