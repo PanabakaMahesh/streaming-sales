@@ -1,154 +1,221 @@
-🚀 StreamSales – AI-Powered Live Commerce Platform
+# 🚀 Streaming Sales – AI-Powered E-Commerce Platform
 
-A next-generation full-stack e-commerce platform designed for small sellers who leverage YouTube live streams & social media to sell products in real-time.
+Streaming Sales is a next-generation e-commerce platform designed to support both buyers and sellers with an integrated **AI-powered support assistant**, real-time interaction features, and a scalable backend architecture.
 
-StreamSales bridges the gap between content-driven selling and traditional e-commerce, enabling seamless product discovery, live interaction, and instant purchasing.
+This platform combines traditional e-commerce functionality with **intelligent automation**, enabling faster support resolution and improved user experience.
 
-🧠 Key Highlights
-🎥 Live-stream-based product selling
-🛒 Real-time commerce experience
-🔐 Secure authentication (JWT-based)
-👥 Dual-role system (Buyer & Seller)
-⚡ Scalable clean architecture (Service-based backend)
-🔗 RESTful API design
-🏗️ Tech Stack
-Layer	Technology
-Frontend	React.js (CRA), React Router v6
-Backend	Node.js, Express.js
-Database	MongoDB + Mongoose
-Auth	JWT + bcryptjs
-Validation	express-validator
-Security	helmet, cors
-API Client	Axios
-📁 Project Structure
-streaming-sales/
-│
-├── backend/
-│   ├── config/            # Database configuration
-│   ├── controllers/       # Handles HTTP layer
-│   ├── services/          # Business logic (core layer)
-│   ├── repositories/      # DB abstraction layer
-│   ├── models/            # Mongoose schemas
-│   ├── middleware/        # Auth, validation, error handling
-│   ├── routes/            # API route definitions
-│   ├── utils/             # Helper functions
-│   └── server.js          # Entry point
-│
-├── frontend/
-│   ├── public/
-│   └── src/
-│       ├── components/
-│       │   └── common/    # Reusable UI components
-│       ├── pages/         # Screens (Home, Product, Orders)
-│       ├── hooks/         # Custom hooks (Auth, Cart)
-│       ├── services/      # API layer (Axios)
-│       └── styles/        # Global styles
-│
-└── docs/                  # Documentation
-⚙️ Setup Instructions
-🔧 Prerequisites
-Node.js ≥ 18
-npm ≥ 9
-MongoDB (Local / Atlas)
-📦 Installation
-1. Clone Repository
-git clone https://github.com/PanabakaMahesh/streaming-sales.git
-cd streaming-sales
-🔙 Backend Setup
-cd backend
-npm install
-cp .env.example .env
+---
 
-Update .env:
+## 🌟 Key Features
 
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/streaming-sales
-JWT_SECRET=your_secret_key
-JWT_EXPIRES_IN=7d
-FRONTEND_URL=http://localhost:3000
-NODE_ENV=development
+### 🛒 Buyer Features
 
-Run backend:
+* Browse and search products
+* View product details
+* Place orders (basic flow)
+* Track queries via AI support system
+* Raise support tickets
 
-npm run dev
-🎨 Frontend Setup
-cd ../frontend
-npm install
-cp .env.example .env
-REACT_APP_API_URL=http://localhost:5000/api
+---
 
-Run frontend:
+### 🏪 Seller Features
 
-npm start
-🌐 Application URLs
-Frontend → http://localhost:3000
-Backend → http://localhost:5000
-🔐 Authentication Flow
-User registers (Buyer/Seller)
-Login returns JWT token
-Token stored in frontend
-Protected routes accessed via middleware
-Role-based authorization enforced
-📡 API Overview
-🔑 Auth APIs
-POST /api/auth/register
-POST /api/auth/login
-GET /api/auth/profile
-🛍️ Product APIs
-GET /api/products
-GET /api/products/:id
-POST /api/products (Seller)
-PUT /api/products/:id (Seller)
-DELETE /api/products/:id (Seller)
-📦 Order APIs
-POST /api/orders
-GET /api/orders/buyer
-GET /api/orders/seller
-PATCH /api/orders/:id/status
-🎥 Stream APIs
-GET /api/stream/live
-POST /api/stream
-POST /api/stream/start/:id
-POST /api/stream/stop/:id
-👥 User Roles
-🧑‍💼 Buyer
-Browse products
-Watch live streams
-Place orders
-Track purchases
-🏪 Seller
-Add/manage products
-Start live streams
-Manage incoming orders
-Update store profile
-🗄️ Database Design
-Collection	Purpose
-users	Authentication + roles
-sellerprofiles	Store details
-products	Product listings
-orders	Purchase records
-streams	Live sessions
-🧩 Architecture
+* Create seller account (separate from buyer)
+* Add and manage products
+* Sell products via platform
+* Receive escalated product-related issues
 
-Clean 4-layer architecture:
+---
 
-Route → Controller → Service → Repository → Database
-Why this matters:
-🔄 Easy scalability
-🧪 Better testing
-🧹 Clean separation of concerns
-🚀 Production-ready structure
-🔍 Health Check
-GET /health
+### 🤖 AI Assistant (NLP-Based Support System)
 
-Returns server status & environment info.
+The platform includes a **smart AI chatbot** available on every page.
 
-🚀 Future Enhancements
-💳 Payment Integration (Razorpay / Stripe)
-🎥 Real-time Streaming (WebRTC / LiveKit)
-🤖 AI Product Recommendation Engine
-💬 Live Chat during streams (Socket.io)
-📊 Seller Analytics Dashboard
-⭐ Reviews & Ratings System
-🔔 Real-time Notifications
-☁️ Cloud Image Upload (AWS S3 / Cloudinary)
+#### 🔹 Capabilities:
+
+* Intent detection (Greeting, Query, Issue)
+* NLP-based ticket classification
+* Confidence-based decision system
+* Auto-resolution for common issues
+* Guided responses (menu-driven interaction)
+* Escalation to human support when required
+
+#### 🔹 Chatbot Features:
+
+* Persistent **Main Menu**
+* Interactive UI (button-based options)
+* Context-aware responses
+* Rule-based + ML hybrid system
+
+---
+
+### 🧠 Human-in-the-Loop Support System
+
+When AI cannot resolve an issue:
+
+1. Ticket is generated
+2. Stored in a secure system
+3. Admin reviews the issue
+4. Admin responds or forwards to seller
+
+#### 📁 Folder Structure:
+
+```id="codeblock1"
+human_support/
+├── incoming_queries/        # Tickets from AI
+├── human_responses/         # Admin replies
+├── seller_forward_queue/    # Seller-related escalations
+```
+
+---
+
+### 👨‍💼 Admin System (Hidden & Secure)
+
+* Not visible in public UI
+* Full system access via secure route
+* Manage:
+
+  * Users (buyers & sellers)
+  * Products
+  * Orders
+  * Support tickets
+
+#### Admin Capabilities:
+
+* Resolve user issues
+* Forward product issues to sellers
+* Train AI system using resolved tickets
+
+---
+
+### 🔁 Seller Escalation System
+
+For product-related complaints:
+
+User → AI → Admin → Seller
+
+Ensures proper handling of:
+
+* Wrong product delivered
+* Damaged items
+* Seller disputes
+
+---
+
+## 🧠 AI Architecture
+
+The AI assistant follows a hybrid architecture:
+
+```id="codeblock2"
+User Message
+     ↓
+Intent Detection (Rule-based)
+     ↓
+If simple → Guided Response
+     ↓
+Else → NLP Classification
+     ↓
+Confidence Score
+     ↓
+IF High → Auto Resolution
+IF Low → Human Escalation
+```
+
+---
+
+## ⚙️ Tech Stack
+
+### Backend:
+
+* Python
+* FastAPI
+* MongoDB
+* Motor (async DB driver)
+
+### AI / NLP:
+
+* scikit-learn (ML models)
+* NLTK (text processing)
+* TF-IDF Vectorizer
+* Logistic Regression
+
+### Frontend:
+
+* React.js
+* Custom chatbot UI (floating assistant)
+
+---
+
+## 📡 API Endpoints
+
+### AI Assistant
+
+* `POST /assistant/message`
+* `POST /assistant/ticket`
+* `GET /assistant/menu`
+
+### Admin
+
+* `GET /admin/tickets`
+* `POST /admin/respond`
+* `POST /admin/forward-to-seller`
+* `POST /admin/train-model`
+
+---
+
+## 🔐 Security Design
+
+* Role-based access (Buyer / Seller / Admin)
+* Hidden admin panel (no public access)
+* Secure ticket handling system
+* Data separation for human support
+
+---
+
+## 🔁 Continuous Learning System
+
+The AI improves over time:
+
+1. Admin resolves tickets
+2. Data stored in training dataset
+3. Model retrained periodically
+4. Accuracy improves automatically
+
+---
+
+## 📌 Future Enhancements
+
+* Live product streaming (core feature expansion)
+* Real-time video selling integration
+* Payment gateway integration
+* Advanced recommendation engine
+* Deep learning NLP models (BERT-based)
+
+---
+
+## 📷 UI Preview
+
+* Floating chatbot (bottom-right)
+* Menu-driven interaction
+* Modern UI inspired by enterprise platforms
+
+---
+
+## 🧑‍💻 Developer Notes
+
+* Modular architecture
+* Easily extendable AI system
+* Replaceable database layer
+* Scalable backend design
+
+---
+
+## 📢 Conclusion
+
+Streaming Sales is not just an e-commerce platform — it is an **AI-driven intelligent support system** that demonstrates:
+
+* NLP-based automation
+* Human-in-the-loop design
+* Real-world scalable architecture
+
+Perfect for showcasing **full-stack + AI integration skills**.
