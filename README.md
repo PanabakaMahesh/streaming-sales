@@ -1,249 +1,154 @@
-# StreamSales – Live Commerce E-Commerce Platform
+🚀 StreamSales – AI-Powered Live Commerce Platform
 
-A full-stack e-commerce platform built for small sellers who sell products through YouTube live streams and social media.
+A next-generation full-stack e-commerce platform designed for small sellers who leverage YouTube live streams & social media to sell products in real-time.
 
----
+StreamSales bridges the gap between content-driven selling and traditional e-commerce, enabling seamless product discovery, live interaction, and instant purchasing.
 
-## Tech Stack
-
-| Layer      | Technology              |
-|------------|-------------------------|
-| Frontend   | React.js (CRA), React Router v6 |
-| Backend    | Node.js, Express.js     |
-| Database   | MongoDB, Mongoose ODM   |
-| Auth       | JWT + bcryptjs          |
-| Validation | express-validator       |
-| Security   | helmet, cors            |
-
----
-
-## Project Structure
-
-```
+🧠 Key Highlights
+🎥 Live-stream-based product selling
+🛒 Real-time commerce experience
+🔐 Secure authentication (JWT-based)
+👥 Dual-role system (Buyer & Seller)
+⚡ Scalable clean architecture (Service-based backend)
+🔗 RESTful API design
+🏗️ Tech Stack
+Layer	Technology
+Frontend	React.js (CRA), React Router v6
+Backend	Node.js, Express.js
+Database	MongoDB + Mongoose
+Auth	JWT + bcryptjs
+Validation	express-validator
+Security	helmet, cors
+API Client	Axios
+📁 Project Structure
 streaming-sales/
 │
 ├── backend/
-│   ├── config/           # DB connection
-│   ├── controllers/      # Route handlers (thin layer)
-│   ├── services/         # Business logic
-│   ├── repositories/     # Data access layer
-│   ├── models/           # Mongoose schemas
-│   ├── middleware/        # Auth, error handling
-│   ├── routes/           # Express route definitions
-│   ├── utils/            # Shared utilities
-│   └── server.js         # App entry point
+│   ├── config/            # Database configuration
+│   ├── controllers/       # Handles HTTP layer
+│   ├── services/          # Business logic (core layer)
+│   ├── repositories/      # DB abstraction layer
+│   ├── models/            # Mongoose schemas
+│   ├── middleware/        # Auth, validation, error handling
+│   ├── routes/            # API route definitions
+│   ├── utils/             # Helper functions
+│   └── server.js          # Entry point
 │
 ├── frontend/
 │   ├── public/
 │   └── src/
 │       ├── components/
-│       │   └── common/   # Navbar, Button, Input, ProductCard, etc.
-│       ├── pages/        # All page components
-│       ├── hooks/        # useAuth context + hook
-│       ├── services/     # Axios API client
-│       └── styles/       # Global CSS + design tokens
+│       │   └── common/    # Reusable UI components
+│       ├── pages/         # Screens (Home, Product, Orders)
+│       ├── hooks/         # Custom hooks (Auth, Cart)
+│       ├── services/      # API layer (Axios)
+│       └── styles/        # Global styles
 │
-└── docs/
-```
-
----
-
-## Prerequisites
-
-- Node.js >= 18
-- MongoDB (local or Atlas)
-- npm >= 9
-
----
-
-## Installation & Setup
-
-### 1. Clone / extract the project
-
-```bash
+└── docs/                  # Documentation
+⚙️ Setup Instructions
+🔧 Prerequisites
+Node.js ≥ 18
+npm ≥ 9
+MongoDB (Local / Atlas)
+📦 Installation
+1. Clone Repository
+git clone https://github.com/PanabakaMahesh/streaming-sales.git
 cd streaming-sales
-```
-
-### 2. Install Backend dependencies
-
-```bash
+🔙 Backend Setup
 cd backend
 npm install
-```
-
-### 3. Configure Backend environment
-
-```bash
 cp .env.example .env
-```
 
-Edit `backend/.env`:
+Update .env:
 
-```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/streaming-sales
-JWT_SECRET=your_super_secret_key_change_this
+JWT_SECRET=your_secret_key
 JWT_EXPIRES_IN=7d
-NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
-```
+NODE_ENV=development
 
-### 4. Install Frontend dependencies
+Run backend:
 
-```bash
+npm run dev
+🎨 Frontend Setup
 cd ../frontend
 npm install
-```
-
-### 5. Configure Frontend environment
-
-```bash
 cp .env.example .env
-```
-
-`frontend/.env`:
-```env
 REACT_APP_API_URL=http://localhost:5000/api
-```
 
----
+Run frontend:
 
-## Running the App
-
-### Start MongoDB (if local)
-
-```bash
-mongod
-```
-
-### Start Backend (Terminal 1)
-
-```bash
-cd backend
-npm run dev
-```
-
-Backend runs at: `http://localhost:5000`
-
-### Start Frontend (Terminal 2)
-
-```bash
-cd frontend
 npm start
-```
+🌐 Application URLs
+Frontend → http://localhost:3000
+Backend → http://localhost:5000
+🔐 Authentication Flow
+User registers (Buyer/Seller)
+Login returns JWT token
+Token stored in frontend
+Protected routes accessed via middleware
+Role-based authorization enforced
+📡 API Overview
+🔑 Auth APIs
+POST /api/auth/register
+POST /api/auth/login
+GET /api/auth/profile
+🛍️ Product APIs
+GET /api/products
+GET /api/products/:id
+POST /api/products (Seller)
+PUT /api/products/:id (Seller)
+DELETE /api/products/:id (Seller)
+📦 Order APIs
+POST /api/orders
+GET /api/orders/buyer
+GET /api/orders/seller
+PATCH /api/orders/:id/status
+🎥 Stream APIs
+GET /api/stream/live
+POST /api/stream
+POST /api/stream/start/:id
+POST /api/stream/stop/:id
+👥 User Roles
+🧑‍💼 Buyer
+Browse products
+Watch live streams
+Place orders
+Track purchases
+🏪 Seller
+Add/manage products
+Start live streams
+Manage incoming orders
+Update store profile
+🗄️ Database Design
+Collection	Purpose
+users	Authentication + roles
+sellerprofiles	Store details
+products	Product listings
+orders	Purchase records
+streams	Live sessions
+🧩 Architecture
 
-Frontend runs at: `http://localhost:3000`
+Clean 4-layer architecture:
 
----
+Route → Controller → Service → Repository → Database
+Why this matters:
+🔄 Easy scalability
+🧪 Better testing
+🧹 Clean separation of concerns
+🚀 Production-ready structure
+🔍 Health Check
+GET /health
 
-## API Endpoints
+Returns server status & environment info.
 
-### Auth
-| Method | Endpoint              | Access  | Description          |
-|--------|-----------------------|---------|----------------------|
-| POST   | /api/auth/register    | Public  | Register buyer/seller |
-| POST   | /api/auth/login       | Public  | Login                |
-| GET    | /api/auth/profile     | Private | Get own profile      |
-
-### Products
-| Method | Endpoint                  | Access        | Description         |
-|--------|---------------------------|---------------|---------------------|
-| GET    | /api/products             | Public        | List all products   |
-| GET    | /api/products/:id         | Public        | Product detail      |
-| GET    | /api/products/seller/my   | Seller only   | My products         |
-| POST   | /api/products             | Seller only   | Create product      |
-| PUT    | /api/products/:id         | Seller only   | Update product      |
-| DELETE | /api/products/:id         | Seller only   | Delete product      |
-
-### Orders
-| Method | Endpoint                  | Access        | Description         |
-|--------|---------------------------|---------------|---------------------|
-| POST   | /api/orders               | Buyer only    | Place order         |
-| GET    | /api/orders/buyer         | Buyer only    | My orders           |
-| GET    | /api/orders/seller        | Seller only   | Received orders     |
-| GET    | /api/orders/:id           | Auth          | Order detail        |
-| PATCH  | /api/orders/:id/status    | Seller only   | Update status       |
-
-### Sellers
-| Method | Endpoint              | Access      | Description           |
-|--------|-----------------------|-------------|-----------------------|
-| GET    | /api/sellers          | Public      | All sellers           |
-| GET    | /api/sellers/:id      | Public      | Seller public profile |
-| GET    | /api/sellers/me/profile | Seller    | My store profile      |
-| PUT    | /api/sellers/update   | Seller only | Update store          |
-
-### Streams
-| Method | Endpoint              | Access      | Description          |
-|--------|-----------------------|-------------|----------------------|
-| GET    | /api/stream/live      | Public      | Live streams         |
-| GET    | /api/stream/:id       | Public      | Stream detail        |
-| POST   | /api/stream           | Seller only | Create stream        |
-| POST   | /api/stream/start/:id | Seller only | Start stream         |
-| POST   | /api/stream/stop/:id  | Seller only | Stop stream          |
-
----
-
-## User Roles
-
-### Buyer
-- Browse marketplace
-- View product details
-- Place orders
-- View order history
-- Watch live streams
-
-### Seller
-- Create / edit / delete products
-- Manage orders (update status)
-- Start / stop live streams
-- Edit store profile
-- Cannot buy products (create a separate buyer account)
-
----
-
-## Database Collections
-
-- **users** – Auth accounts with role (buyer/seller)
-- **sellerprofiles** – Store details linked to seller users
-- **products** – Product listings by sellers
-- **orders** – Purchase records with status history
-- **streams** – Live stream sessions
-
----
-
-## Architecture Notes
-
-The backend follows a 4-layer clean architecture:
-
-```
-Request → Route → Controller → Service → Repository → MongoDB
-```
-
-- **Controllers** handle HTTP only (req/res)
-- **Services** contain all business logic
-- **Repositories** contain all DB queries
-- **Models** define schemas
-
----
-
-## Future Roadmap (Phase 2+)
-
-- [ ] Payment gateway (Razorpay / Stripe)
-- [ ] Real streaming provider (LiveKit / Agora / WebRTC)
-- [ ] AI product recommendation engine
-- [ ] AI seller assistant chatbot
-- [ ] Reviews and ratings system
-- [ ] Real-time notifications (Socket.io)
-- [ ] Real-time live stream chat
-- [ ] Analytics dashboard
-- [ ] Image upload (Cloudinary / S3)
-
----
-
-## Health Check
-
-```
-GET http://localhost:5000/health
-```
-
-Returns server status and environment info.
+🚀 Future Enhancements
+💳 Payment Integration (Razorpay / Stripe)
+🎥 Real-time Streaming (WebRTC / LiveKit)
+🤖 AI Product Recommendation Engine
+💬 Live Chat during streams (Socket.io)
+📊 Seller Analytics Dashboard
+⭐ Reviews & Ratings System
+🔔 Real-time Notifications
+☁️ Cloud Image Upload (AWS S3 / Cloudinary)
